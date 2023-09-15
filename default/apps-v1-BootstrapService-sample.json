@@ -1,0 +1,5 @@
+{
+    "image": "sampleimagename",
+    "replicas": 3,
+    "size": "small"
+}
