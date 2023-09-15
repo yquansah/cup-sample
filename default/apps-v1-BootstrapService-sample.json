@@ -1,5 +1,9 @@
 {
-    "image": "sampleimagename",
-    "replicas": 3,
-    "size": "small"
+    "apiVersion": "",
+    "kind": "BootstrapService",
+    "spec": {
+        "image": "sampleimagename",
+        "replicas": 3,
+        "size": "small"
+    }
 }
