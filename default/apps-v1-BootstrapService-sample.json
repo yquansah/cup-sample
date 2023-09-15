@@ -1,8 +1,8 @@
 {
-    "apiVersion": "",
+    "apiVersion": "v1",
     "kind": "BootstrapService",
     "spec": {
-        "image": "sampleimagename",
+        "image": "flipt/flipt:latest",
         "replicas": 3,
         "size": "small"
     }
