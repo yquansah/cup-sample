@@ -1,0 +1,49 @@
+{
+  "apiVersion": "v1",
+  "kind": "BootstrapService",
+  "metadata": {
+    "namespace": "",
+    "name": "",
+    "labels": null,
+    "annotations": null
+  },
+  "spec": {
+    "definition": {
+      "name": "flipt",
+      "image": "flipt/flipt:v1.27.0",
+      "replicas": 5,
+      "size": "small"
+    },
+    "transformed": {
+      "apiVersion": "apps/v1",
+      "kind": "Deployment",
+      "metadata": {
+        "name": "frontend"
+      },
+      "spec": {
+        "replicas": "5",
+        "template": {
+          "metadata": {
+            "labels": {
+              "app": "flipt"
+            }
+          },
+          "spec": {
+            "containers": [
+              {
+                "name": "app",
+                "image": "flipt/flipt:v1.27.0",
+                "resources": {
+                  "requests": {
+                    "memory": "64Mi",
+                    "cpu": "250m"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}
